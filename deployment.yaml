@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testbox
+  labels:
+    app: testbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testbox
+  template:
+    metadata:
+      labels:
+        app: testbox
+    spec:
+      containers:
+      - name: testbox
+        image: tranchung/testbox
+        imagePullPolicy: Always
+
